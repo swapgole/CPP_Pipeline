@@ -1,0 +1,11 @@
+[requires]
+gtest/1.10.0
+
+[generators]
+cmake
+
+[options]
+
+[imports]
+bin, *.dll -> ./build/bin
+lib, *.dylib* -> ./build/bin
