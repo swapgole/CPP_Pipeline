@@ -12,10 +12,15 @@ pipeline {
             					steps {
 			         			echo 'Installing dependencies..'
 							//bat 'DependencyInstall.bat'
-							node {
-								def conanClient = Artifactory.newConanClient()
-								def b = conanClient.run(command: "install ..")
-							     }
+							
+							// Create a conan client instance
+                					rtConanClient (
+                    						id: "myConanClient"
+                							)
+							 rtConanRun (
+                    						clientId: "myConanClient",
+                    						command: "install . --build missing"
+                						)
            					      }
                                               }
 		
