@@ -11,7 +11,9 @@ pipeline {
         	stage('Install Dependencies') {
             					steps {
 			         			echo 'Installing dependencies..'
-							bat 'DependencyInstall.bat'
+							//bat 'DependencyInstall.bat'
+							def conanClient = Artifactory.newConanClient()
+							def b = conanClient.run(command: "install ..")
            					      }
                                               }
 		
