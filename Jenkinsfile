@@ -11,9 +11,9 @@ pipeline {
         	stage('Install Dependencies') {
             					steps {
 			         			echo 'Installing dependencies..'
-                     					//mkdir build
-                     					//cd build
-                     					// conan install .. --build missing
+                     					mkdir build
+                     					cd build
+                     					conan install .. --build missing
            					      }
                                               }
 		
