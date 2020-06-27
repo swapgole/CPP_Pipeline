@@ -11,7 +11,7 @@ pipeline {
         	stage('Install Dependencies') {
             					steps {
 			         			echo 'Installing dependencies..'
-							DependencyInstall.bat
+							bat 'DependencyInstall.bat'
            					      }
                                               }
 		
