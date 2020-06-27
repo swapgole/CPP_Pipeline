@@ -8,51 +8,51 @@ pipeline {
 	}
 
 	stages {
-        stage('Install Dependencies') {
-            steps {
-			         echo 'Installing dependencies..'
-                     mkdir build
-                     cd build
-                     conan install .. --build missing
-            }
-        }
+        	stage('Install Dependencies') {
+            					steps {
+			         			echo 'Installing dependencies..'
+                     					mkdir build
+                     					cd build
+                     					conan install .. --build missing
+           					      }
+                                              }
 		
 		stage('Build') {
-            steps {
-			          echo 'Building..'
-                      cd build 
-                      cmake .. -G "Visual Studio 16 2019" 
-                      cmake --build . --config Release 
-            }
-        }
+                                 steps {
+			                  echo 'Building..'
+                                          //cd build 
+                                          // cmake .. -G 'Visual Studio 16 2019' 
+                                          // cmake --build . --config Release 
+                                       }
+                               }
 
-        stage('Test') {
-            when {
-                environment name: 'RUN_TESTS', value: 'true'
-            }
-            steps {
-			    echo 'Testing..'
-                .\bin\calc_test.exe --gtest_output="xml:report.xml"
-            }
-        }
+                 stage('Test') {
+                                    when {
+                                       environment name: 'RUN_TESTS', value: 'true'
+                                    }
+                                   steps {
+			                    echo 'Testing..'
+                                             // .\bin\calc_test.exe --gtest_output="xml:report.xml"
+                                         }
+                                }
 
-        stage('Analyse') {
-            when {
-                environment name: 'RUN_ANALYSIS', value: 'true'
-            }
-            steps {
-			     echo 'Do something for analysis , like CPPCheck'
+                 stage('Analyse') {
+                                     when {
+                                         environment name: 'RUN_ANALYSIS', value: 'true'
+                                          }
+                                    steps {
+			                     echo 'Do something for analysis , like CPPCheck'
                 
-            }
-        }
+                                          }
+                                  }
 
-        stage('Deploy') {
-            when {
-                environment name: 'DEPLOY', value: 'true'
-            }
-            steps {
-			     echo 'Do something for deployment'
-            }
-        }
+                 stage('Deploy') {
+                                      when {
+                                         environment name: 'DEPLOY', value: 'true'
+                                      }
+                                     steps {
+			                      echo 'Do something for deployment'
+                                           }
+                                 }
 	}
 }
