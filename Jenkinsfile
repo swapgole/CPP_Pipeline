@@ -1,5 +1,5 @@
 pipeline {
-	agent none
+	agent any
 
 	parameters {
 		booleanParam name: 'RUN_TESTS', defaultValue: true, description: 'Run Tests?'
