@@ -21,8 +21,8 @@ pipeline {
             steps {
 			          echo 'Building..'
                       cd build 
-                      cmake .. -G "Visual Studio 16 2019" 
-                      cmake --build . --config Release 
+                      # cmake .. -G "Visual Studio 16 2019" 
+                      # cmake --build . --config Release 
             }
         }
 
@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
 			    echo 'Testing..'
-                .\bin\calc_test.exe --gtest_output="xml:report.xml"
+                # .\bin\calc_test.exe --gtest_output="xml:report.xml"
             }
         }
 
