@@ -17,6 +17,15 @@ pipeline {
                 					rtConanClient (
                     						id: "myConanClient"
                 							)
+							
+							 rtConanRemote (
+                    							name: "conan-center",
+                    							serverId: SERVER_ID,
+                    							repo: "conan-center",
+                    							clientId: "myConanClient"
+                							)
+							
+							
 							 rtConanRun (
                     						clientId: "myConanClient",
                     						command: "install . --build missing"
