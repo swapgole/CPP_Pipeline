@@ -14,22 +14,22 @@ pipeline {
 							//bat 'DependencyInstall.bat'
 							
 							// Create a conan client instance
-                					rtConanClient (
-                    						id: "myConanClient"
-                							)
+                					//rtConanClient (
+                    					//	id: "myConanClient"
+                					//		)
 							
-							 rtConanRemote (
-                    							name: "conan-center",
-                    							serverId: SERVER_ID,
-                    							repo: "conan-center",
-                    							clientId: "myConanClient"
-                							)
+							 //rtConanRemote (
+                    					 //		name: "conan-center",
+                    					 //		serverId: SERVER_ID,
+                    					 //		repo: "conan-center",
+                    					 //		clientId: "myConanClient"
+                					 //		)
 							
 							
-							 rtConanRun (
-                    						clientId: "myConanClient",
-                    						command: "install . --build missing"
-                						)
+							 //rtConanRun (
+                    					 //	clientId: "myConanClient",
+                    					 //	command: "install . --build missing"
+                					 //	)
            					      }
                                               }
 		
