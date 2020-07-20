@@ -26,10 +26,10 @@ pipeline {
                 					 //		)
 							
 							
-							 rtConanRun (
-                    					 	clientId: "myConanClient",
-                    					 	command: "install . --build missing"
-                						)
+							 //rtConanRun (
+                    					 //	clientId: "myConanClient",
+                    					 //	command: "install . --build missing"
+                					 //	)
            					      }
                                               }
 		
